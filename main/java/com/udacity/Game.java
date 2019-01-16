@@ -97,11 +97,11 @@ public class Game<grid> {
             win = true;
         }
         for(i = 0; i <3; i++) {
-            if(grid[i][0]=='o' && grid[i][1] == 'o' && grid[i][2] == 'o'){
-                result ="O Wins";
-                win =true;
-            }
             if ((grid[i][0] == 'o' && grid[i][1] == 'o' && grid[i][2] == 'o' || grid[0][i] == 'o' && grid[1][i] == 'o' && grid[2][i] == 'o')) {
+                result = "O Wins";
+                win = true;
+            }
+            if ((grid[0][0] == 'o' && grid[1][1] == 'o' && grid[2][2] == 'o') || (grid[2][0] == 'o' && grid[1][1] == 'o' && grid[0][2] == 'o')) {
                 result = "O Wins";
                 win = true;
             }
@@ -109,10 +109,6 @@ public class Game<grid> {
                 if (freeSpots == 0 || !win) {
                     result = "Tie";
                 }
-            }
-            if ((grid[0][0] == 'o' && grid[1][1] == 'o' && grid[2][2] == 'o') || (grid[2][0] == 'o' && grid[1][1] == 'o' && grid[0][2] == 'o')) {
-                result = "O Wins";
-                win = true;
             }
         }
         return result;
